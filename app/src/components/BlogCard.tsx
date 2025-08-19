@@ -22,17 +22,23 @@ const StyledCard = styled(Card)(({ theme }) => ({
   },
 }))
 
-const StyledCardMedia = styled(CardMedia)({
+const StyledCardMedia = styled(CardMedia)(({ theme }) => ({
   height: 200,
   backgroundSize: 'cover',
   backgroundPosition: 'center',
-})
+  [theme.breakpoints.down('sm')]: {
+    height: 180,
+  },
+}))
 
-const CardContentStyled = styled(CardContent)({
+const CardContentStyled = styled(CardContent)(({ theme }) => ({
   flexGrow: 1,
   display: 'flex',
   flexDirection: 'column',
-})
+  [theme.breakpoints.down('sm')]: {
+    padding: theme.spacing(2),
+  },
+}))
 
 const PostTitle = styled(Typography)(({ theme }) => ({
   marginBottom: theme.spacing(1),
@@ -42,6 +48,10 @@ const PostTitle = styled(Typography)(({ theme }) => ({
   WebkitLineClamp: 2,
   WebkitBoxOrient: 'vertical',
   overflow: 'hidden',
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '1.15rem',
+    lineHeight: 1.4,
+  },
 }))
 
 const PostExcerpt = styled(Typography)(({ theme }) => ({
@@ -61,6 +71,11 @@ const PostMeta = styled(Box)(({ theme }) => ({
   marginBottom: theme.spacing(2),
   color: theme.palette.text.secondary,
   fontSize: '0.875rem',
+  [theme.breakpoints.down('sm')]: {
+    gap: theme.spacing(1),
+    marginBottom: theme.spacing(1.5),
+    fontSize: '0.8rem',
+  },
 }))
 
 const MetaItem = styled(Box)({

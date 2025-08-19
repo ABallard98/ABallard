@@ -14,6 +14,11 @@ const HeroContainer = styled(Box)(({ theme }) => ({
   alignItems: 'center',
   position: 'relative',
   overflow: 'hidden',
+  padding: theme.spacing(4, 0),
+  [theme.breakpoints.down('md')]: {
+    minHeight: '60vh',
+    padding: theme.spacing(2, 0),
+  },
   '&::before': {
     content: '""',
     position: 'absolute',
@@ -49,11 +54,15 @@ const HeroContainer = styled(Box)(({ theme }) => ({
   },
 }))
 
-const HeroContent = styled(Box)({
+const HeroContent = styled(Box)(({ theme }) => ({
   textAlign: 'center',
   position: 'relative',
   zIndex: 1,
-})
+  padding: theme.spacing(0, 2),
+  [theme.breakpoints.down('md')]: {
+    padding: theme.spacing(0, 1),
+  },
+}))
 
 const HeroTitle = styled(Typography)(({ theme }) => ({
   marginBottom: theme.spacing(2),
@@ -64,7 +73,12 @@ const HeroTitle = styled(Typography)(({ theme }) => ({
   backgroundClip: 'text',
   textShadow: '0 4px 20px rgba(99, 102, 241, 0.3)',
   [theme.breakpoints.down('md')]: {
-    fontSize: '2.5rem',
+    fontSize: '2.25rem',
+    lineHeight: 1.2,
+  },
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '2rem',
+    lineHeight: 1.3,
   },
 }))
 
@@ -75,6 +89,13 @@ const HeroSubtitle = styled(Typography)(({ theme }) => ({
   margin: '0 auto',
   [theme.breakpoints.down('md')]: {
     fontSize: '1.1rem',
+    maxWidth: '500px',
+    marginBottom: theme.spacing(3),
+  },
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '1rem',
+    maxWidth: '400px',
+    lineHeight: 1.6,
   },
 }))
 
@@ -93,6 +114,14 @@ const CTAButton = styled(Button)(({ theme }) => ({
     boxShadow: '0 12px 48px rgba(99, 102, 241, 0.6)',
   },
   transition: 'all 0.3s ease',
+  [theme.breakpoints.down('md')]: {
+    padding: theme.spacing(1.25, 3),
+    fontSize: '1rem',
+  },
+  [theme.breakpoints.down('sm')]: {
+    padding: theme.spacing(1, 2.5),
+    fontSize: '0.95rem',
+  },
 }))
 
 const ScrollIndicator = styled(Box)(({ theme }) => ({
@@ -101,6 +130,9 @@ const ScrollIndicator = styled(Box)(({ theme }) => ({
   left: '50%',
   transform: 'translateX(-50%)',
   animation: 'bounce 2s infinite',
+  [theme.breakpoints.down('md')]: {
+    bottom: theme.spacing(2),
+  },
   '@keyframes bounce': {
     '0%, 20%, 50%, 80%, 100%': {
       transform: 'translateX(-50%) translateY(0)',
@@ -120,24 +152,24 @@ const HeroSection: React.FC = () => {
       <Container maxWidth="lg">
         <HeroContent>
           <HeroTitle variant="h1">
-            Welcome to My Blog
+            Full Stack Engineer
           </HeroTitle>
-          <HeroSubtitle variant="h5">
-            Discover insightful articles about technology, development, and life.
-            Join me on this journey of learning and sharing knowledge.
+          <HeroSubtitle variant="h5" paddingBottom={3}>
+            I'm a passionate full-stack engineer with 5+ years of experience building scalable solutions for startups
+            and scaleups in Manchester, UK.
           </HeroSubtitle>
-          <Link href="#latest-posts" style={{ textDecoration: 'none' }}>
-            <CTAButton
-              size="large"
-              startIcon={<ArrowDownwardIcon />}
-            >
-              Explore Posts
-            </CTAButton>
-          </Link>
+         
         </HeroContent>
       </Container>
       <ScrollIndicator>
-        <ArrowDownwardIcon sx={{ color: 'white', opacity: 0.7 }} />
+        <Link href="#latest-posts" style={{ textDecoration: 'none' }}>
+          <CTAButton
+            size="large"
+            startIcon={<ArrowDownwardIcon />}
+          >
+            Explore Posts
+          </CTAButton>
+        </Link>
       </ScrollIndicator>
     </HeroContainer>
   )

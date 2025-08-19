@@ -11,6 +11,10 @@ const MainContainer = styled(Container)(({ theme }) => ({
   paddingTop: theme.spacing(4),
   paddingBottom: theme.spacing(4),
   position: 'relative',
+  [theme.breakpoints.down('md')]: {
+    paddingTop: theme.spacing(3),
+    paddingBottom: theme.spacing(3),
+  },
   '&::before': {
     content: '""',
     position: 'absolute',
@@ -22,6 +26,11 @@ const MainContainer = styled(Container)(({ theme }) => ({
     borderRadius: '50%',
     filter: 'blur(60px)',
     zIndex: -1,
+    [theme.breakpoints.down('md')]: {
+      width: '200px',
+      height: '200px',
+      left: '5%',
+    },
   },
 }))
 
@@ -34,6 +43,13 @@ const SectionTitle = styled(Typography)(({ theme }) => ({
   backgroundClip: 'text',
   fontWeight: 600,
   position: 'relative',
+  [theme.breakpoints.down('md')]: {
+    marginBottom: theme.spacing(3),
+    fontSize: '2rem',
+  },
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '1.75rem',
+  },
   '&::after': {
     content: '""',
     position: 'absolute',
@@ -44,6 +60,9 @@ const SectionTitle = styled(Typography)(({ theme }) => ({
     height: '2px',
     background: 'linear-gradient(90deg, #6366f1 0%, #ec4899 100%)',
     borderRadius: '1px',
+    [theme.breakpoints.down('md')]: {
+      width: '60px',
+    },
   },
 }))
 
@@ -52,13 +71,13 @@ const HomePage: React.FC = () => {
     <>
       <HeroSection />
       <MainContainer maxWidth="lg">
-        <Box sx={{ my: 6 }}>
+        <Box sx={{ my: { xs: 4, md: 6 } }}>
           <SectionTitle variant="h3">
             Latest Posts
           </SectionTitle>
-          <Grid container spacing={4}>
+          <Grid container spacing={{ xs: 2, sm: 3, md: 4 }}>
             {blogPosts.map((post) => (
-              <Grid item xs={12} md={6} lg={4} key={post.id}>
+              <Grid item xs={12} sm={6} lg={4} key={post.id}>
                 <BlogCard post={post} />
               </Grid>
             ))}

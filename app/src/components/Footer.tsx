@@ -14,6 +14,9 @@ const FooterContainer = styled(Box)(({ theme }) => ({
   marginTop: 'auto',
   padding: theme.spacing(4, 0),
   position: 'relative',
+  [theme.breakpoints.down('md')]: {
+    padding: theme.spacing(3, 0),
+  },
   '&::before': {
     content: '""',
     position: 'absolute',
@@ -39,12 +42,15 @@ const SocialIconButton = styled(IconButton)(({ theme }) => ({
   transition: 'all 0.3s ease',
 }))
 
-const SocialContainer = styled(Box)({
+const SocialContainer = styled(Box)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
   gap: 1,
   marginBottom: 2,
-})
+  [theme.breakpoints.down('sm')]: {
+    gap: 0.5,
+  },
+}))
 
 const Footer: React.FC = () => {
   return (
