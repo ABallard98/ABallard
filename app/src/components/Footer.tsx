@@ -52,16 +52,24 @@ const SocialContainer = styled(Box)(({ theme }) => ({
   },
 }))
 
+const onLinkedInClick = () => {
+  window.open('https://www.linkedin.com/in/ayden-ballard-27512a125/', '_blank')
+}
+
+const onGitHubClick = () => {
+  window.open('https://github.com/ABallard98', '_blank')
+}
+
 const Footer: React.FC = () => {
   return (
     <FooterContainer component="footer">
       <Container maxWidth="lg">
         <Box textAlign="center">
           <SocialContainer>
-            <SocialIconButton aria-label="LinkedIn">
+            <SocialIconButton aria-label="LinkedIn" onClick={onLinkedInClick}>
               <LinkedInIcon />
             </SocialIconButton>
-            <SocialIconButton aria-label="GitHub">
+            <SocialIconButton aria-label="GitHub" onClick={onGitHubClick}>
               <GitHubIcon />
             </SocialIconButton>
           </SocialContainer>
