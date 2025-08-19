@@ -1,8 +1,8 @@
 'use client'
 
 import React from 'react'
-import { AppBar, Toolbar, Typography, Button, Box, Container, IconButton, useMediaQuery } from '@mui/material'
-import { styled, useTheme } from '@mui/material/styles'
+import { AppBar, Toolbar, Typography, Button, Box, Container, IconButton } from '@mui/material'
+import { styled } from '@mui/material/styles'
 import Link from 'next/link'
 import HomeIcon from '@mui/icons-material/Home'
 import InfoIcon from '@mui/icons-material/Info'
@@ -25,6 +25,7 @@ const Logo = styled(Typography)(({ theme }) => ({
   backgroundClip: 'text',
   textDecoration: 'none',
   cursor: 'pointer',
+  fontSize: '1.5rem', // h5 size
   '&:hover': {
     background: 'linear-gradient(135deg, #818cf8 0%, #f472b6 100%)',
     WebkitBackgroundClip: 'text',
@@ -32,6 +33,9 @@ const Logo = styled(Typography)(({ theme }) => ({
     backgroundClip: 'text',
   },
   transition: 'all 0.3s ease',
+  [theme.breakpoints.down('md')]: {
+    fontSize: '1.25rem', // h6 size
+  },
 }))
 
 const NavButton = styled(Button)(({ theme }) => ({
@@ -76,15 +80,12 @@ const NavContainer = styled(Box)({
 })
 
 const Header: React.FC = () => {
-  const theme = useTheme()
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'))
-
   return (
     <StyledAppBar position="sticky">
       <Container maxWidth="lg">
         <Toolbar sx={{ minHeight: { xs: '56px', sm: '64px' } }}>
           <Link href="/" style={{ textDecoration: 'none', flexGrow: 1 }}>
-            <Logo variant={isMobile ? "h6" : "h5"}>
+            <Logo>
               Ayden Ballard
             </Logo>
           </Link>

@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useRef } from 'react'
 import { Container, Typography, Grid, Box } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import BlogCard from '@/components/BlogCard'
@@ -66,12 +66,31 @@ const SectionTitle = styled(Typography)(({ theme }) => ({
   },
 }))
 
+const LatestPostsSection = styled(Box)(({ theme }) => ({
+  scrollMarginTop: '80px', // Static offset for header + padding
+  [theme.breakpoints.down('md')]: {
+    scrollMarginTop: '100px', // Extra padding for mobile
+  },
+}))
+
 const HomePage: React.FC = () => {
+  const latestPostsRef = useRef<HTMLDivElement>(null)
+
+  const scrollToLatestPosts = () => {
+    if (latestPostsRef.current) {
+      latestPostsRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest'
+      })
+    }
+  }
+
   return (
     <>
-      <HeroSection />
+      <HeroSection onScrollToPosts={scrollToLatestPosts} />
       <MainContainer maxWidth="lg">
-        <Box sx={{ my: { xs: 4, md: 6 } }}>
+        <LatestPostsSection ref={latestPostsRef} sx={{ my: { xs: 4, md: 6 } }}>
           <SectionTitle variant="h3">
             Latest Posts
           </SectionTitle>
@@ -82,7 +101,7 @@ const HomePage: React.FC = () => {
               </Grid>
             ))}
           </Grid>
-        </Box>
+        </LatestPostsSection>
       </MainContainer>
     </>
   )

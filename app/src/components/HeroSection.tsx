@@ -146,7 +146,11 @@ const ScrollIndicator = styled(Box)(({ theme }) => ({
   },
 }))
 
-const HeroSection: React.FC = () => {
+interface HeroSectionProps {
+  onScrollToPosts: () => void
+}
+
+const HeroSection: React.FC<HeroSectionProps> = ({ onScrollToPosts }) => {
   return (
     <HeroContainer>
       <Container maxWidth="lg">
@@ -162,14 +166,14 @@ const HeroSection: React.FC = () => {
         </HeroContent>
       </Container>
       <ScrollIndicator>
-        <Link href="#latest-posts" style={{ textDecoration: 'none' }}>
-          <CTAButton
-            size="large"
-            startIcon={<ArrowDownwardIcon />}
-          >
-            Explore Posts
-          </CTAButton>
-        </Link>
+        <CTAButton
+          size="large"
+          startIcon={<ArrowDownwardIcon />}
+          onClick={onScrollToPosts}
+          style={{ textDecoration: 'none' }}
+        >
+          Explore Posts
+        </CTAButton>
       </ScrollIndicator>
     </HeroContainer>
   )
