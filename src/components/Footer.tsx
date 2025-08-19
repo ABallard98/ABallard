@@ -51,15 +51,6 @@ const Footer: React.FC = () => {
     <FooterContainer component="footer">
       <Container maxWidth="lg">
         <Box textAlign="center">
-          <Typography variant="h6" gutterBottom>
-            My Blog
-          </Typography>
-          <Typography variant="body2" color="grey.400" paragraph>
-            Sharing thoughts, ideas, and experiences through writing
-          </Typography>
-          
-          <Divider sx={{ my: 3, backgroundColor: 'grey.700' }} />
-          
           <SocialContainer>
             <SocialIconButton aria-label="GitHub">
               <GitHubIcon />
@@ -73,7 +64,7 @@ const Footer: React.FC = () => {
           </SocialContainer>
           
           <Typography variant="body2" color="grey.500">
-            © {new Date().getFullYear()} My Blog. All rights reserved.
+            © {new Date().getFullYear()} Ayden Ballard. All rights reserved.
           </Typography>
         </Box>
       </Container>

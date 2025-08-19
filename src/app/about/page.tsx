@@ -6,6 +6,7 @@ import { styled } from '@mui/material/styles'
 import CodeIcon from '@mui/icons-material/Code'
 import DesignServicesIcon from '@mui/icons-material/DesignServices'
 import SchoolIcon from '@mui/icons-material/School'
+import CloudIcon from '@mui/icons-material/Cloud'
 
 const PageContainer = styled(Container)(({ theme }) => ({
   paddingTop: theme.spacing(6),
@@ -16,15 +17,6 @@ const PageContainer = styled(Container)(({ theme }) => ({
 const HeroSection = styled(Box)(({ theme }) => ({
   textAlign: 'center',
   marginBottom: theme.spacing(6),
-}))
-
-const ProfileAvatar = styled(Avatar)(({ theme }) => ({
-  width: 150,
-  height: 150,
-  margin: '0 auto',
-  marginBottom: theme.spacing(3),
-  backgroundColor: theme.palette.primary.main,
-  fontSize: '3rem',
 }))
 
 const ContentSection = styled(Paper)(({ theme }) => ({
@@ -60,31 +52,30 @@ const SkillIcon = styled(Box)(({ theme }) => ({
 const AboutPage: React.FC = () => {
   const skills = [
     {
-      icon: <CodeIcon fontSize="large" />,
-      title: 'Frontend Development',
+      icon: <DesignServicesIcon fontSize="large" />,
+      title: 'Frontend',
       description: 'Expertise in React, Next.js, TypeScript, and modern JavaScript frameworks.',
     },
     {
-      icon: <DesignServicesIcon fontSize="large" />,
-      title: 'UI/UX Design',
-      description: 'Creating beautiful and intuitive user interfaces with attention to detail.',
+      icon: <CodeIcon fontSize="large" />,
+      title: 'Backend',
+      description: 'Expertise in Express, FastAPI, Postgres, MongoDB, and much more.',
     },
     {
-      icon: <SchoolIcon fontSize="large" />,
-      title: 'Technical Writing',
-      description: 'Sharing knowledge through clear and comprehensive technical articles.',
+      icon: <CloudIcon fontSize="large" />,
+      title: 'Infrastructure',
+      description: 'Expertise in Infrastructure as Code, Docker, AWS, GCP, Digital Ocean',
     },
   ]
 
   return (
     <PageContainer maxWidth="lg">
       <HeroSection>
-        <ProfileAvatar>JD</ProfileAvatar>
         <Typography variant="h2" component="h1" gutterBottom fontWeight={700}>
           About Me
         </Typography>
         <Typography variant="h5" color="text.secondary" sx={{ maxWidth: 600, mx: 'auto' }}>
-          Passionate developer and writer sharing insights about modern web development
+          Full Stack Developer and Technical Writer
         </Typography>
       </HeroSection>
 
@@ -93,19 +84,18 @@ const AboutPage: React.FC = () => {
           My Story
         </Typography>
         <Typography variant="body1" paragraph>
-          Welcome to my blog! I'm a passionate full-stack developer with over 5 years of experience 
-          building web applications. My journey in technology started during college when I first 
-          discovered the power of code to solve real-world problems.
+          My love affair with programming started when I was thirteen, tinkering with video game mods 
+          late into the night. What began as curiosity about how games worked has turned into over 5 years 
+          of building solutions for startups and growing companies.
         </Typography>
         <Typography variant="body1" paragraph>
-          I specialize in modern React development, particularly with Next.js, TypeScript, and 
-          Material-UI. I believe in writing clean, maintainable code and sharing knowledge with 
-          the developer community through this blog.
+          I'm the kind of developer who gets genuinely excited about solving complex problems and turning 
+          ideas into reality. Whether it's crafting APIs, building web applications, or setting up infrastructure 
+          - I love the challenge of making things work seamlessly.
         </Typography>
         <Typography variant="body1" paragraph>
-          When I'm not coding, you can find me exploring new technologies, contributing to open-source 
-          projects, or writing articles about the latest trends in web development. I'm always excited 
-          to learn new things and help others on their coding journey.
+          What makes me thrive is helping startups and scaleups turn their vision into reality. I love the fast-paced environment where every decision matters 
+          and you get to see the direct impact of your work.
         </Typography>
       </ContentSection>
 
