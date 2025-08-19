@@ -76,9 +76,9 @@ const PortfolioPage: React.FC = () => {
       description: 'AI-driven nearshore wave assessment tool to accelerate climate change resilient offshore infrastructure planning',
       technologies: ['React', 'AWS', 'FastAPI', 'MongoDB', 'Terraform', 'CI/CD'],
       achievements: [
-        'Reduced deployment time by 75% through automated CI/CD',
-        'Improved application performance by 40%',
-        'Led team of 5 developers'
+        'Automated queueing and management of long running tasks to AWS ECS clusters',
+        'Improved simulation efficiency by 220%',
+        'Frontend development in React to view, analyse and compare simulation results'
       ]
     },
     {
