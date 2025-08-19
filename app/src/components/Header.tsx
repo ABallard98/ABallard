@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { AppBar, Toolbar, Typography, Button, Box, Container, IconButton } from '@mui/material'
+import { AppBar, Toolbar, Typography, Button, Box, Container } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import Link from 'next/link'
 import HomeIcon from '@mui/icons-material/Home'
@@ -60,17 +60,6 @@ const NavButton = styled(Button)(({ theme }) => ({
       display: 'none',
     },
   },
-}))
-
-const MobileNavIcon = styled(IconButton)(({ theme }) => ({
-  color: theme.palette.text.primary,
-  marginLeft: theme.spacing(0.5),
-  '&:hover': {
-    backgroundColor: 'rgba(99, 102, 241, 0.1)',
-    boxShadow: '0 4px 12px rgba(99, 102, 241, 0.2)',
-    transform: 'translateY(-1px)',
-  },
-  transition: 'all 0.3s ease',
 }))
 
 const NavContainer = styled(Box)({

@@ -1,11 +1,10 @@
 'use client'
 
 import React from 'react'
-import { Container, Typography, Box, Paper, Avatar, Grid } from '@mui/material'
+import { Container, Typography, Box, Paper, Grid } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import CodeIcon from '@mui/icons-material/Code'
 import DesignServicesIcon from '@mui/icons-material/DesignServices'
-import SchoolIcon from '@mui/icons-material/School'
 import CloudIcon from '@mui/icons-material/Cloud'
 
 const PageContainer = styled(Container)(({ theme }) => ({

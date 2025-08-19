@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { Box, Container, Typography, IconButton, Divider } from '@mui/material'
+import { Box, Container, Typography, IconButton } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import TwitterIcon from '@mui/icons-material/Twitter'

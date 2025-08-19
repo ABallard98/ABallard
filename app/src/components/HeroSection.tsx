@@ -3,7 +3,6 @@
 import React from 'react'
 import { Box, Container, Typography, Button } from '@mui/material'
 import { styled } from '@mui/material/styles'
-import Link from 'next/link'
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward'
 
 const HeroContainer = styled(Box)(({ theme }) => ({
@@ -159,8 +158,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onScrollToPosts }) => {
             Full Stack Engineer
           </HeroTitle>
           <HeroSubtitle variant="h5" paddingBottom={3}>
-            I'm a passionate full-stack engineer with 5+ years of experience building scalable solutions for startups
-            and scaleups in Manchester, UK.
+            Passionate engineer with 5+ years experience helping UK startup and scaleups
+            by building scalable solutions.
           </HeroSubtitle>
          
         </HeroContent>
