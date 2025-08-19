@@ -7,6 +7,7 @@ import Link from 'next/link'
 import HomeIcon from '@mui/icons-material/Home'
 import InfoIcon from '@mui/icons-material/Info'
 import ContactMailIcon from '@mui/icons-material/ContactMail'
+import WorkIcon from '@mui/icons-material/Work'
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
   backgroundColor: 'rgba(26, 26, 46, 0.8)',
@@ -83,6 +84,11 @@ const Header: React.FC = () => {
             <Link href="/" passHref>
               <NavButton startIcon={<HomeIcon />}>
                 <span className="nav-text">Home</span>
+              </NavButton>
+            </Link>
+            <Link href="/portfolio" passHref>
+              <NavButton startIcon={<WorkIcon />}>
+                <span className="nav-text">Portfolio</span>
               </NavButton>
             </Link>
             <Link href="/about" passHref>

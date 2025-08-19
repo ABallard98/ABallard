@@ -45,7 +45,7 @@ const SocialIconButton = styled(IconButton)(({ theme }) => ({
 const SocialContainer = styled(Box)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
-  gap: 1,
+  gap: '0.5em',
   marginBottom: 2,
   [theme.breakpoints.down('sm')]: {
     gap: 0.5,
@@ -58,14 +58,11 @@ const Footer: React.FC = () => {
       <Container maxWidth="lg">
         <Box textAlign="center">
           <SocialContainer>
-            <SocialIconButton aria-label="GitHub">
-              <GitHubIcon />
-            </SocialIconButton>
-            <SocialIconButton aria-label="Twitter">
-              <TwitterIcon />
-            </SocialIconButton>
             <SocialIconButton aria-label="LinkedIn">
               <LinkedInIcon />
+            </SocialIconButton>
+            <SocialIconButton aria-label="GitHub">
+              <GitHubIcon />
             </SocialIconButton>
           </SocialContainer>
           
@@ -73,7 +70,7 @@ const Footer: React.FC = () => {
             © {new Date().getFullYear()} Ayden Ballard. All rights reserved.
           </Typography>
         </Box>
-      </Container>
+    </Container>
     </FooterContainer>
   )
 }
