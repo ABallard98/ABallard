@@ -4,7 +4,6 @@ import React from 'react'
 import { Box, Container, Typography, IconButton } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import GitHubIcon from '@mui/icons-material/GitHub'
-import TwitterIcon from '@mui/icons-material/Twitter'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 
 const FooterContainer = styled(Box)(({ theme }) => ({
